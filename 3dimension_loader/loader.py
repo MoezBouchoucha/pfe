@@ -236,9 +236,9 @@ class loader:
     def obj2img(self,path):
         obj = trimesh.load(path,force="mesh")
 
-        #theta = np.random.uniform(0, 2*np.pi)
-        #quat = trimesh.transformations.quaternion_about_axis(theta, [0, 0, 1])
-        #obj.apply_transform(trimesh.transformations.quaternion_matrix(quat)) # type: ignore
+        theta = np.random.uniform(0, 2*np.pi)
+        quat = trimesh.transformations.quaternion_about_axis(theta, [0, 0, 1])
+        obj.apply_transform(trimesh.transformations.quaternion_matrix(quat)) # type: ignore
 
         mesh = pyrender.Mesh.from_trimesh(obj, smooth=False)
         
